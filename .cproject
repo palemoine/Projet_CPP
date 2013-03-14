@@ -103,6 +103,15 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Caverne.cdt.managedbuild.target.gnu.cross.exe.578950933" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/Caverne"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/Caverne"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1404215855;cdt.managedbuild.config.gnu.cross.exe.release.1404215855.;cdt.managedbuild.tool.gnu.cross.c.compiler.1758455800;cdt.managedbuild.tool.gnu.c.compiler.input.1238228780">
@@ -111,12 +120,12 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.377117374;cdt.managedbuild.config.gnu.cross.exe.debug.377117374.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1444400548;cdt.managedbuild.tool.gnu.cpp.compiler.input.2030162318">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1404215855;cdt.managedbuild.config.gnu.cross.exe.release.1404215855.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.2037124535;cdt.managedbuild.tool.gnu.cpp.compiler.input.1597613888">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.377117374;cdt.managedbuild.config.gnu.cross.exe.debug.377117374.;cdt.managedbuild.tool.gnu.cross.c.compiler.1023870521;cdt.managedbuild.tool.gnu.c.compiler.input.1179407888">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1404215855;cdt.managedbuild.config.gnu.cross.exe.release.1404215855.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.2037124535;cdt.managedbuild.tool.gnu.cpp.compiler.input.1597613888">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

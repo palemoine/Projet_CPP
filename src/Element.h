@@ -8,6 +8,7 @@
 #ifndef ELEMENT_H_
 #define ELEMENT_H_
 #include <string>
+#include "Position.h"
 
 using namespace std;
 

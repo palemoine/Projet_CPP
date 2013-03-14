@@ -12,17 +12,22 @@
 #include<vector>
 #include<string>
 #include<map>
-
+#include"Element.h"
+#include"Position.h"
 using namespace std;
 
-class Monde {
+
+
+class Monde : public vector<Element *> {
 	private
 		map <Position, unsigned int> map;
 
 	public:
 		Monde();
 
-		afficher()const;
+//		afficher()const;
+		unsigned int estValide(Position _pos) const;
+		void ajouter(Element * _el);
 
 };
 
