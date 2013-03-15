@@ -10,7 +10,7 @@
 using namespace std;
 
 // Constructeur par défault
-Element::Element(): name(""), position(4,1) {}
+Element::Element(): name(""), position(Position(4,1)) {}
 
 // Constructeur paramétré
 Element::Element(const string& _name, const Position& _position): name(_name), position(_position) {}
@@ -18,10 +18,10 @@ Element::Element(const string& _name, const Position& _position): name(_name), p
 // Getteurs
 const string& Element::getName() const { return name ; }
 
-const Position*& Element::getPosition() const {	return position ; }
+const Position& Element::getPosition() const {	return position ; }
 
 // Setteurs
-void Element::setPosition(const Position*& position) {
+void Element::setPosition(const Position& position) {
 	this->position = position;
 }
 
