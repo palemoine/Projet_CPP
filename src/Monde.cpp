@@ -11,11 +11,11 @@ Monde::Monde() {
 	Position pos(2,2);
 	Element * e= new Element ("Orc", pos);
 	push_back(e);
-	push_back(pair<Position, unsigned int>(pos, size()-1));
+	//push_back(pair<Position, unsigned int>(pos, size()-1));
 }
 
 Monde::Monde() {
-	map = new map<>
+	map = new map<>;
 }
 
 //void Monde::afficher()const
@@ -29,26 +29,26 @@ Monde::Monde() {
 //	cout<<Iter->first<<" "<<Iter->second<<endl;
 //}
 
-unsigned int
-Monde::estValide(Position _pos) const
-{
-  unsigned int r = 0;
-  map<Position, unsigned int>::const_iterator it;
-  it = carte.end();
-  if (carte.find(_pos) != it)
-    r = 1;
-  return r;
-}
-
-void
-Monde::ajouter(Element * _elt)
-{
-  if (estValide(_elt->getPos()))
-  {
-    push_back(_elt); // ajoute un élément dans le vecteur
-    carte.insert(pair<Position, unsigned> (_elt->getPos(), size()-1)); // size() car Monde hérite de Vecteur
-  }
-}
+//unsigned int
+//Monde::estValide(Position _pos) const
+//{
+//  unsigned int r = 0;
+//  map<Position, unsigned int>::const_iterator it;
+//  it = carte.end();
+//  if (carte.find(_pos) != it)
+//    r = 1;
+//  return r;
+//}
+//
+//void
+//Monde::ajouter(Element * _elt)
+//{
+//  if (estValide(_elt->getPos()))
+//  {
+//    push_back(_elt); // ajoute un élément dans le vecteur
+//    carte.insert(pair<Position, unsigned> (_elt->getPos(), size()-1)); // size() car Monde hérite de Vecteur
+//  }
+//}
 
 
 

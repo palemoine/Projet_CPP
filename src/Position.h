@@ -22,6 +22,9 @@ public:
 	int getPositionX()const;
 	int getPositionY()const;
 	void setPosition(int & _positionX, int & _positionY);
+	bool operator < (const Position & p2) const;
+
 };
+ostream & operator << (ostream & Out, const Position &pos);
 
 #endif /* POSITION_H_ */

@@ -19,7 +19,7 @@ using namespace std;
 
 
 class Monde : public vector<Element *> {
-	private
+private:
 		map <Position, unsigned int> map;
 
 	public:
