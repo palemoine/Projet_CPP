@@ -16,15 +16,15 @@ class Element {
 
 private:
 	string name;
-	Position * position;
+	Position position;
 
 public:
 	Element();
 	Element(const string&, const Position&);
 	const string& getName() const;
 	void setName(const string& name);
-	const Position*& getPosition() const;
-	void setPosition(const Position*& position);
+	const Position& getPosition() const;
+	void setPosition(const Position& position);
 };
 
 #endif /* ELEMENT_H_ */
