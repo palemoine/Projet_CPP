@@ -7,9 +7,50 @@
 
 #include "Mobile.h"
 
-namespace std {
-
 Mobile::Mobile() {}
-bool Mobile::seDeplacer(Direction dir){}
 
-} /* namespace std */
+int Mobile::getVitesse() const {
+	return vitesse;
+}
+
+unsigned int Mobile::getVision() const {
+	return vision;
+}
+
+void Mobile::setVision(unsigned int vision) {
+	this->vision = vision;
+}
+
+void Mobile::setVitesse(int vitesse) {
+	this->vitesse = vitesse;
+}
+
+
+bool Mobile::seDeplacer(Direction dir){
+	switch (dir){
+		case NORD :
+			//this->setPosition(getPositionX(), getPositionY()++);
+			break;
+
+		case NORDEST :
+
+			break;
+
+		case NORDOUEST :
+
+			break;
+
+		case SUD :
+
+			break;
+
+		case SUDEST :
+
+			break;
+
+		case SUDOUEST :
+
+			break;
+	}
+}
+

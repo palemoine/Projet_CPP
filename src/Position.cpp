@@ -9,6 +9,7 @@
 
 // Constructeur par défault
 Position::Position(): positionX(4), positionY(1){}
+
 // Constructeur paramétré
 Position::Position(int _positionX, int _positionY): positionX(_positionX), positionY(_positionY){}
 
