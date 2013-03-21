@@ -52,5 +52,6 @@ bool Mobile::seDeplacer(Direction dir){
 
 			break;
 	}
+	return true;
 }
 

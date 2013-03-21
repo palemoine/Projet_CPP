@@ -20,11 +20,11 @@ using namespace std;
 
 class Monde : public vector<Element *> {
 private:
-		map <Position, unsigned int> map;
+		map <Position, unsigned > laMap;
 
 public:
 		Monde();
-		const map<Position, unsigned int>&getMap() const;
+		const map<Position, unsigned >&getMap() const;
 		void afficher() const;
 		unsigned int estValide(Position _pos) const;
 		void ajouter(Element * _elem);

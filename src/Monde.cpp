@@ -12,12 +12,9 @@ Monde::Monde() {
 	Position pos(2,2);
 	Element * elem= new Element ("Orc", pos);
 	push_back(elem);
-	map.insert(pair<Position, unsigned>(pos, size() - 1)); // on utilise size car monde hérite de Vecteur
+	laMap.insert(pair<Position, unsigned>(pos, size() - 1)); // on utilise size car monde hérite de Vecteur
 }
 
-Monde::Monde() {
-	map = new map<>;
-}
 
 //void Monde::afficher()const
 //{

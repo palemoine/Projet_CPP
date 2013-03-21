@@ -9,6 +9,7 @@
 #define POSITION_H_
 
 using namespace std;
+#include <iostream>
 
 class Position {
 

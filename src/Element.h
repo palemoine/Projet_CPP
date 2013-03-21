@@ -8,6 +8,7 @@
 #ifndef ELEMENT_H_
 #define ELEMENT_H_
 #include <string>
+#include <iostream>
 #include "Position.h"
 
 using namespace std;
@@ -24,7 +25,7 @@ public:
 	const string& getName() const;
 	void setName(const string& name);
 	const Position& getPosition() const;
-	void setPosition(const Position& position);
+	void setPosition(const Position& );
 	void afficherElement();
 };
 

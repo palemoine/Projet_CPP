@@ -10,12 +10,12 @@
 
 
 using namespace std;
+#include <iostream>
+#include "Element.h"
+
 
 class Ressource : public Element {
 
-private:
-	string name;
-	Position * position;
 
 public:
 	Ressource();

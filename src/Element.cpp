@@ -21,8 +21,8 @@ const string& Element::getName() const { return name ; }
 const Position& Element::getPosition() const {	return position ; }
 
 // Setteurs
-void Element::setPosition(const Position& position) {
-	this->position = position;
+void Element::setPosition(const Position& _position) {
+	this->position = _position;
 }
 
 void Element::setName(const string& name) {
