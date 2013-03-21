@@ -22,11 +22,11 @@ Monde::Monde() {
 //{
 //	cout<<"Vector : "<<endl;
 //	for (unsigned i=0 ; i< size() ; i++)
-//	at(i)->afficher();
+//		at(i)->afficher();
 //	cout<<"Map : "<<endl;
 //	map<PositionHex, unsigned int>::const_iterator Iter;
 //	for(Iter=getMap().begin(); Iter!=getMap().end() ; Iter++)
-//	cout<<Iter->first<<" "<<Iter->second<<endl;
+//		cout<<Iter->first<<" "<<Iter->second<<endl;
 //}
 
 //unsigned int
