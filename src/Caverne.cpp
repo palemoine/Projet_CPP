@@ -11,5 +11,9 @@ using namespace std;
 
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	Monde monde;
+	  monde.afficher();
+
+
 	return 0;
 }
