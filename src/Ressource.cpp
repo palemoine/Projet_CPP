@@ -16,7 +16,7 @@ Ressource::Ressource(const string& _name, const Position& _position): name(_name
 // Getteurs
 const string& Element::getName() const { return name ; }
 
-const Position*& Element::getPosition() const {	return position ; }
+const Position& Element::getPosition() const {	return position ; }
 
 // Setteurs
 void Element::setPosition(const Position*& position) {

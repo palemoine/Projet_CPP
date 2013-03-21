@@ -8,10 +8,11 @@
 #include "Monde.h"
 
 Monde::Monde() {
+	cout << "Monde créé.\n";
 	Position pos(2,2);
-	Element * e= new Element ("Orc", pos);
-	push_back(e);
-	//push_back(pair<Position, unsigned int>(pos, size()-1));
+	Element * elem= new Element ("Orc", pos);
+	push_back(elem);
+	map.insert(pair<Position, unsigned>(pos, size() - 1)); // on utilise size car monde hérite de Vecteur
 }
 
 Monde::Monde() {

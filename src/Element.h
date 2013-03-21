@@ -25,6 +25,7 @@ public:
 	void setName(const string& name);
 	const Position& getPosition() const;
 	void setPosition(const Position& position);
+	void afficherElement();
 };
 
 #endif /* ELEMENT_H_ */

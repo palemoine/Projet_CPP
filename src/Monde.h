@@ -22,12 +22,12 @@ class Monde : public vector<Element *> {
 private:
 		map <Position, unsigned int> map;
 
-	public:
+public:
 		Monde();
-
-//		afficher()const;
+		const map<Position, unsigned int>&getMap() const;
+		void afficher() const;
 		unsigned int estValide(Position _pos) const;
-		void ajouter(Element * _el);
+		void ajouter(Element * _elem);
 
 };
 

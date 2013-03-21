@@ -23,7 +23,7 @@ public:
 	int getPositionY()const;
 	void setPosition(int & _positionX, int & _positionY);
 	bool operator < (const Position & p2) const;
-
+	void afficherPosition();
 };
 ostream & operator << (ostream & Out, const Position &pos);
 

@@ -24,14 +24,21 @@ void Position::setPosition(int & _positionX, int & _positionY)
 	this->positionY = _positionY;
 }
 
-// Redefinition de l'operateur <
+// Redéfinition de l'opérateur <
 bool Position::operator <(const Position & p2) const
 {
   return this->positionX < p2.positionX || (this->positionX == p2.positionX && this->positionY < p2.positionY);
 }
 
+// Redéfinition de l'opérateur <<
 ostream& operator <<(ostream& Out, const Position& pos)
 {
   Out << "(" << pos.getPositionX() << ";" << pos.getPositionY() << ")";
   return Out;
+}
+
+// Affichage de la position
+void Position::afficherPosition()
+{
+  cout << "X : " << getPositionX() << " , Y : " << getPositionY() << endl;
 }
