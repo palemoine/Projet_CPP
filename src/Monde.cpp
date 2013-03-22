@@ -22,8 +22,8 @@ void Monde::afficher()const
 	for (unsigned i=0 ; i< size() ; i++)
 		at(i)->afficherElement();
 	cout<<"Map : "<<endl;
-	map<PositionHex, unsigned int>::const_iterator Iter;
-	for(Iter=getMap().begin(); Iter!=getMap().end() ; Iter++)
+	map<Position, unsigned int>::const_iterator Iter;
+	 for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
 		cout<<Iter->first<<" "<<Iter->second<<endl;
 }
 

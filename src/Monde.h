@@ -24,7 +24,7 @@ private:
 
 public:
 		Monde();
-		const map<Position, unsigned >&getMap() const;
+		const map<Position, unsigned > getMap() const;
 		void afficher() const;
 		unsigned int estValide(Position _pos) const;
 		void ajouter(Element * _elem);
