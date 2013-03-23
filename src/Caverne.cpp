@@ -8,13 +8,13 @@
 
 #include <iostream>
 #include "Monde.h"
+#include "Grille.h"
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	Monde monde;
-	  monde.afficher();
+	Grille grille;
 
-
+	monde.afficher();
 	return 0;
 }
