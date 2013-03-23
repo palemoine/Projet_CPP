@@ -7,21 +7,21 @@
 
 #include "Orc.h"
 
-namespace std {
+using namespace std;
 
-Orc::Orc() {}
-Orc::Orc(const string& _name, const Position& _pos){
+Orc::Orc(Monde *_monde) : Mobile(_monde) {}
+Orc::Orc(Monde *_monde, const string& _name, const Position& _pos): Mobile(_monde)
+{
 	this->setVision(1);
 	this->setVitesse(1);
 	this->setName(_name);
 	this->setPosition(_pos);
 
 }
-Orc::Orc(const string& _name, const Position& _pos, const unsigned int& _vitesse, const unsigned int& _vision){
+Orc::Orc(Monde *_monde, const string& _name, const Position& _pos, const unsigned int& _vitesse, const unsigned int& _vision): Mobile(_monde)
+{
 	this->setVision(_vision);
 	this->setVitesse(_vitesse);
 	this->setName(_name);
 	this->setPosition(_pos);
 }
-
-} /* namespace std */

@@ -4,14 +4,39 @@
  *  Created on: 28 févr. 2013
  *      Author: pa
  */
-
+#include <stdlib.h>
 #include "Position.h"
 
 // Constructeur par défault
-Position::Position(): positionX(4), positionY(1){}
+Position::Position()
+{
+	srand (time(NULL));
+	int x, y = -1, test;
+	//Fonction random
+    const int min = 0 ;
+    const int max = 10 ;
+
+    x = min + (rand() % (max - min));
+
+    while(y < min || y > max)
+    {
+    	test = 1 + (rand() % (1 - 2));
+    	cout << test;
+		if(test == 1)
+		{
+			y = x + 2;
+		}
+		else
+		{
+			y = x - 2;
+		}
+    }
+    positionX = x;
+    positionY = y;
+}
 
 // Constructeur paramétré
-Position::Position(int _positionX, int _positionY): positionX(_positionX), positionY(_positionY){}
+Position::Position(unsigned int _positionX, unsigned int _positionY): positionX(_positionX), positionY(_positionY){}
 
 // Getteurs
 int Position::getPositionX()const{ return positionX ; }

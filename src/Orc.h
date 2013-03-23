@@ -10,19 +10,18 @@
 #include "Mobile.h"
 #include <iostream>
 
-namespace std {
+using namespace std;
 
 class Orc :public Mobile {
 
 	public:
-		Orc();
-		Orc(const string& , const Position&);
-		Orc(const string&, const Position&, const unsigned int&, const unsigned int&);
+		Orc(Monde *);
+		Orc(Monde *, const string& , const Position&);
+		Orc(Monde *, const string&, const Position&, const unsigned int&, const unsigned int&);
 
 	private:
 
 
 };
 
-} /* namespace std */
 #endif /* ORC_H_ */

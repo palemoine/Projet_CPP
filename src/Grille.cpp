@@ -14,6 +14,7 @@
 // Constructeur par défaut
 Grille::Grille(): largeur(5), longueur(10){}
 
+// Constructeur paramétré
 Grille::Grille(int _largeur, int _longueur): largeur(_largeur), longueur(_longueur){}
 
 void Grille::afficherGrille()

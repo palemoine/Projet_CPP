@@ -5,17 +5,33 @@
  *      Author: victor
  */
 
+#include <stdlib.h>
 #include "Monde.h"
+#include "Orc.h"
 
 Monde::Monde() {
+	xMax = 12;
+	yMax = 12;
 	cout << "Monde créé.\n";
-	Position pos(2,2);
-	Element * elem= new Element ("Orc", pos);
-	Position pos2(3,4);
-	Element *elem2= new Element ("Troll", pos2);
-	push_back(elem);
-	push_back(elem2);
+
+    Position pos;
+	Orc *orc1 = new Orc(this,"Orc des plaines", pos);
+	push_back(orc1);
 	laMap.insert(pair<Position, unsigned>(pos, size() - 1));
+
+	Position pos2(0,0);
+	Orc *orc2 = new Orc(this,"Orc des montagnes", pos2);
+	push_back(orc2);
+	laMap.insert(pair<Position, unsigned>(pos2, size() - 1));
+
+	this->afficher();
+
+	orc1->seDeplacer(Mobile::SUD);
+	cout<< "___________________________________________"<<endl;
+	orc2->seDeplacer(Mobile::NORD);
+
+	this->afficher();
+
 }
 
 
@@ -30,14 +46,34 @@ void Monde::afficher()const
 		cout<<Iter->first<<" "<<Iter->second<<endl;
 }
 
-unsigned int Monde::estValide(Position _pos) const
+bool Monde::estValide(Position _pos) const
 {
-  unsigned int r = 0;
-  map<Position, unsigned int>::const_iterator it;
-  it = laMap.end();
-  if (laMap.find(_pos) != it)
-    r = 1;
-  return r;
+  bool posValide = true;
+
+  map<Position, unsigned int>::const_iterator Iter;
+  for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
+  {
+	  if((_pos.getPositionX() < 0 || _pos.getPositionX() > this->getXMax() || _pos.getPositionY() < 0 || _pos.getPositionY() > this->getYMax()) || (laMap.find(_pos) != laMap.end()))
+		  posValide = false;
+  }
+
+  return (posValide);
+}
+
+unsigned int Monde::getXMax() const {
+	return xMax;
+}
+
+void Monde::setXMax(unsigned int max) {
+	xMax = max;
+}
+
+unsigned int Monde::getYMax() const {
+	return yMax;
+}
+
+void Monde::setYMax(unsigned int max) {
+	yMax = max;
 }
 
 void Monde::ajouter(Element * _element)
