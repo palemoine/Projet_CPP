@@ -8,7 +8,7 @@
 #include "Ressource.h"
 
 // Constructeur par défault
-Ressource::Ressource(): Element() {}
+Ressource::Ressource(Monde *_monde): Element(_monde) {}
 
 // Constructeur paramétré
-Ressource::Ressource(const string& _name, const Position& _position): Element(_name, _position) {}
+Ressource::Ressource(Monde *_monde, const string& _name, const Position& _position): Element(_monde, _name, _position) {}

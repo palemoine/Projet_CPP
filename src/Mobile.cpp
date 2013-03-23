@@ -8,7 +8,11 @@
 
 #include "Mobile.h"
 
-Mobile::Mobile() {}
+Mobile::Mobile(Monde *_monde) : Element(_monde)
+{
+	vitesse = 1;
+	vision = 1;
+}
 
 int Mobile::getVitesse() const {
 	return vitesse;
@@ -17,6 +21,7 @@ int Mobile::getVitesse() const {
 unsigned int Mobile::getVision() const {
 	return vision;
 }
+
 
 void Mobile::setVision(unsigned int vision) {
 	this->vision = vision;
@@ -30,41 +35,50 @@ void Mobile::setVitesse(int vitesse) {
 bool Mobile::seDeplacer(Direction dir){
 	  Position curPos = this->getPosition();
 	  Position newPos(curPos);
+	  unsigned int indiceElemCourant = this->getMonde()->getMap().at(curPos);
 
 	switch (dir){
-		case NORD :
+		case 0 :
+			newPos.setPositionY(newPos.getPositionY() - 2);
+			break;
+
+		case 1 :
+			newPos.setPositionY(newPos.getPositionY() - 1);
+			newPos.setPositionX(newPos.getPositionX() + 1);
+			break;
+
+		case 2 :
+			newPos.setPositionY(newPos.getPositionY() - 1);
+			newPos.setPositionX(newPos.getPositionX() - 1);
+			break;
+
+		case 3 :
 			newPos.setPositionY(newPos.getPositionY() + 2);
 			break;
 
-		case NORDEST :
+		case 4 :
 			newPos.setPositionY(newPos.getPositionY() + 1);
-			newPos.setPositionX(newPos.getPositionX() + 2);
+			newPos.setPositionX(newPos.getPositionX() + 1);
 			break;
 
-		case NORDOUEST :
-			newPos.setPositionY(newPos.getPositionY() + 1);
-			newPos.setPositionX(newPos.getPositionX() - 2);
-			break;
-
-		case SUD :
-			newPos.setPositionY(newPos.getPositionY() - 2);
-			break;
-
-		case SUDEST :
-			newPos.setPositionY(newPos.getPositionY() - 2);
-			newPos.setPositionX(newPos.getPositionX() + 2);
-			break;
-
-		case SUDOUEST :
-			newPos.setPositionY(newPos.getPositionY() - 2);
-			newPos.setPositionX(newPos.getPositionX() - 2);
+		case 5 :
+			newPos.setPositionY(newPos.getPositionY() - 1);
+			newPos.setPositionX(newPos.getPositionX() + 1);
 			break;
 	}
-//	if estValide(newPos){
-//
-//	}else{
-//		cout << "Position invalide"
-//	}
+	//cout<<this->getMonde()->estValide(newPos);
+	if (this->getMonde()->estValide(newPos))
+	{
+		// Modification de la position de l'élément
+		setPosition(newPos);
+		// Modification de la map
+		this->getMonde()->getMap().erase(curPos);
+		this->getMonde()->getMap().insert(pair<Position, unsigned int>(newPos,indiceElemCourant));
+	}
+	else
+	{
+		cout << "Position occupée ou en dehors de la carte." << endl;
+	}
 	return true;
 }
 

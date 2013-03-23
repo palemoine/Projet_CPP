@@ -12,8 +12,8 @@
 #include<vector>
 #include<string>
 #include<map>
-#include"Element.h"
 #include"Position.h"
+#include "Element.h"
 using namespace std;
 
 
@@ -21,6 +21,8 @@ using namespace std;
 class Monde : public vector<Element *> {
 private:
 		map <Position, unsigned > laMap;
+		unsigned int xMax;
+		unsigned int yMax;
 
 public:
 		Monde();
@@ -28,9 +30,12 @@ public:
 		map<Position, unsigned >&getMap();
 
 		void afficher() const;
-		unsigned int estValide(Position _pos) const;
+		bool estValide(Position _pos) const;
 		void ajouter(Element * _elem);
-
+		unsigned int getXMax() const;
+		void setXMax(unsigned int max);
+		unsigned int getYMax() const;
+		void setYMax(unsigned int max);
 };
 
 

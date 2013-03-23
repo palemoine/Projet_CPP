@@ -7,18 +7,20 @@
 
 #ifndef MOBILE_H_
 #define MOBILE_H_
+#include <string>
 #include "Element.h"
+#include "Monde.h"
 
-namespace std {
+using namespace std;
 
 class Mobile : public Element{
 private:
-	typedef enum {NORD, NORDEST, NORDOUEST, SUD, SUDEST, SUDOUEST} Direction;
 	unsigned int vitesse;
 	unsigned int vision;
 
 public:
-	Mobile();
+	typedef enum {NORD, NORDEST, NORDOUEST, SUD, SUDEST, SUDOUEST} Direction;
+	Mobile(Monde *_monde);
 	bool seDeplacer(Direction);
 	int getVitesse() const;
 	void setVitesse(int vitesse);
@@ -26,5 +28,4 @@ public:
 	void setVision(unsigned int vision);
 };
 
-} /* namespace std */
 #endif /* MOBILE_H_ */

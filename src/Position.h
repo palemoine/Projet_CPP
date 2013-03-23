@@ -14,12 +14,12 @@ using namespace std;
 class Position {
 
 private:
-	int positionX;
-	int positionY;
+	unsigned int positionX;
+	unsigned int positionY;
 
 public:
 	Position();
-	Position(int, int);
+	Position(unsigned int, unsigned int);
 	int getPositionX()const;
 	int getPositionY()const;
 	void setPosition(int & _positionX, int & _positionY);

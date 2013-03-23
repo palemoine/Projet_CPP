@@ -10,19 +10,18 @@
 #include "Mobile.h"
 #include <iostream>
 
-namespace std {
+using namespace std;
 
-class Troll :public Mobile {
+//class Troll :public Mobile {
+//
+//	public:
+//		Troll();
+//		Troll(const Position&);
+//		Troll(const Position&, const unsigned int&, const unsigned int&);
+//
+//	private:
+//
+//
+//};
 
-	public:
-		Troll();
-		Troll(const Position&);
-		Troll(const Position&, const unsigned int&, const unsigned int&);
 
-	private:
-
-
-};
-
-} /* namespace std */
-#endif /* TROLL_H_ */

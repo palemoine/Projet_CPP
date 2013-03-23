@@ -18,8 +18,8 @@ class Ressource : public Element {
 
 
 public:
-	Ressource();
-	Ressource(const string&, const Position&);
+	Ressource(Monde *);
+	Ressource(Monde *, const string&, const Position&);
 };
 
 #endif /* RESSOURCE_H_ */

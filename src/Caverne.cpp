@@ -12,9 +12,8 @@
 using namespace std;
 
 int main() {
+	//int nbJour = 0;
 	Monde monde;
-	Grille grille;
 
-	monde.afficher();
 	return 0;
 }
