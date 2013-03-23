@@ -10,8 +10,7 @@
 // Constructeur par défault
 Position::Position()
 {
-	srand (time(NULL));
-	int x, y = -1, test;
+	int x = 0, y = -1, test = 0;
 	//Fonction random
     const int min = 0 ;
     const int max = 10 ;
@@ -20,8 +19,8 @@ Position::Position()
 
     while(y < min || y > max)
     {
-    	test = 1 + (rand() % (1 - 2));
-    	cout << test;
+    	test = 1 + (rand() % (3 - 1));
+    	//cout << test;
 		if(test == 1)
 		{
 			y = x + 2;
@@ -30,21 +29,22 @@ Position::Position()
 		{
 			y = x - 2;
 		}
+	    positionX = x;
+	    positionY = y;
     }
-    positionX = x;
-    positionY = y;
+
 }
 
 // Constructeur paramétré
 Position::Position(unsigned int _positionX, unsigned int _positionY): positionX(_positionX), positionY(_positionY){}
 
 // Getteurs
-int Position::getPositionX()const{ return positionX ; }
+unsigned int Position::getPositionX()const{ return positionX ; }
 
-int Position::getPositionY()const{ return positionY ; }
+unsigned int Position::getPositionY()const{ return positionY ; }
 
 // Setteur
-void Position::setPosition(int & _positionX, int & _positionY)
+void Position::setPosition(unsigned int & _positionX, unsigned int & _positionY)
 {
 	this->positionX = _positionX;
 	this->positionY = _positionY;
@@ -63,11 +63,11 @@ ostream& operator <<(ostream& Out, const Position& pos)
   return Out;
 }
 
-void Position::setPositionX(int positionX) {
+void Position::setPositionX(unsigned int positionX) {
 	this->positionX = positionX;
 }
 
-void Position::setPositionY(int positionY) {
+void Position::setPositionY(unsigned int positionY) {
 	this->positionY = positionY;
 }
 

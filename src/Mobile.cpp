@@ -33,10 +33,8 @@ void Mobile::setVitesse(int vitesse) {
 
 
 bool Mobile::seDeplacer(Direction dir){
-	  Position curPos = this->getPosition();
-	  Position newPos(curPos);
-	  unsigned int indiceElemCourant = this->getMonde()->getMap().at(curPos);
-
+	Position curPos = this->getPosition();
+	Position newPos(curPos);
 	switch (dir){
 		case 0 :
 			newPos.setPositionY(newPos.getPositionY() - 2);
@@ -69,15 +67,18 @@ bool Mobile::seDeplacer(Direction dir){
 	//cout<<this->getMonde()->estValide(newPos);
 	if (this->getMonde()->estValide(newPos))
 	{
+		this->afficherElement();
 		// Modification de la position de l'élément
 		setPosition(newPos);
 		// Modification de la map
 		this->getMonde()->getMap().erase(curPos);
-		this->getMonde()->getMap().insert(pair<Position, unsigned int>(newPos,indiceElemCourant));
+		cout << "   a bougé en : " << this->getPosition()<< endl;
+		this->getMonde()->getMap().insert(pair<Position, unsigned int>(newPos,this->getMonde()->getMap().size() - 1));
 	}
 	else
 	{
-		cout << "Position occupée ou en dehors de la carte." << endl;
+		this->afficherElement();
+		cout << "   veut bouger en " << newPos << " mais la position est occupée ou en dehors de la carte." << endl;
 	}
 	return true;
 }

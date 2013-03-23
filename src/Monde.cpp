@@ -8,27 +8,20 @@
 #include <stdlib.h>
 #include "Monde.h"
 #include "Orc.h"
+#include <string>
 
 Monde::Monde() {
 	xMax = 12;
 	yMax = 12;
 	cout << "Monde créé.\n";
 
-    Position pos;
-	Orc *orc1 = new Orc(this,"Orc des plaines", pos);
-	push_back(orc1);
-	laMap.insert(pair<Position, unsigned>(pos, size() - 1));
-
-	Position pos2(0,0);
-	Orc *orc2 = new Orc(this,"Orc des montagnes", pos2);
-	push_back(orc2);
-	laMap.insert(pair<Position, unsigned>(pos2, size() - 1));
-
-	this->afficher();
-
-	orc1->seDeplacer(Mobile::SUD);
-	cout<< "___________________________________________"<<endl;
-	orc2->seDeplacer(Mobile::NORD);
+	for (int i = 0 ; i < 15 ; i++)
+	{
+		Position pos;
+		Orc *orc1 = new Orc(this,"Orc des plaines", pos);
+		push_back(orc1);
+		laMap.insert(pair<Position, unsigned>(pos, size() - 1));
+	}
 
 	this->afficher();
 
