@@ -38,6 +38,14 @@ ostream& operator <<(ostream& Out, const Position& pos)
   return Out;
 }
 
+void Position::setPositionX(int positionX) {
+	this->positionX = positionX;
+}
+
+void Position::setPositionY(int positionY) {
+	this->positionY = positionY;
+}
+
 // Affichage de la position
 void Position::afficherPosition()
 {

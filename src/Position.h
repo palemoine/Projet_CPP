@@ -25,6 +25,8 @@ public:
 	void setPosition(int & _positionX, int & _positionY);
 	bool operator < (const Position & p2) const;
 	void afficherPosition();
+	void setPositionX(int positionX);
+	void setPositionY(int positionY);
 };
 ostream & operator << (ostream & Out, const Position &pos);
 

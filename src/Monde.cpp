@@ -11,7 +11,10 @@ Monde::Monde() {
 	cout << "Monde créé.\n";
 	Position pos(2,2);
 	Element * elem= new Element ("Orc", pos);
+	Position pos2(3,4);
+	Element *elem2= new Element ("Troll", pos2);
 	push_back(elem);
+	push_back(elem2);
 	laMap.insert(pair<Position, unsigned>(pos, size() - 1));
 }
 

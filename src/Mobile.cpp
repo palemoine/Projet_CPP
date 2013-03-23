@@ -5,6 +5,7 @@
  *      Author: victor
  */
 
+
 #include "Mobile.h"
 
 Mobile::Mobile() {}
@@ -27,31 +28,43 @@ void Mobile::setVitesse(int vitesse) {
 
 
 bool Mobile::seDeplacer(Direction dir){
+	  Position curPos = this->getPosition();
+	  Position newPos(curPos);
+
 	switch (dir){
 		case NORD :
-			//this->setPosition(getPositionX(), getPositionY()++);
+			newPos.setPositionY(newPos.getPositionY() + 2);
 			break;
 
 		case NORDEST :
-
+			newPos.setPositionY(newPos.getPositionY() + 1);
+			newPos.setPositionX(newPos.getPositionX() + 2);
 			break;
 
 		case NORDOUEST :
-
+			newPos.setPositionY(newPos.getPositionY() + 1);
+			newPos.setPositionX(newPos.getPositionX() - 2);
 			break;
 
 		case SUD :
-
+			newPos.setPositionY(newPos.getPositionY() - 2);
 			break;
 
 		case SUDEST :
-
+			newPos.setPositionY(newPos.getPositionY() - 2);
+			newPos.setPositionX(newPos.getPositionX() + 2);
 			break;
 
 		case SUDOUEST :
-
+			newPos.setPositionY(newPos.getPositionY() - 2);
+			newPos.setPositionX(newPos.getPositionX() - 2);
 			break;
 	}
+//	if estValide(newPos){
+//
+//	}else{
+//		cout << "Position invalide"
+//	}
 	return true;
 }
 
