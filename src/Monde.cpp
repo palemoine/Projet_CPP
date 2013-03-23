@@ -41,7 +41,7 @@ void Monde::ajouter(Element * _element)
 {
   if (estValide(_element->getPosition()))
   {
-    push_back(_element); // Ajout _element dans le vecteur
+    push_back(_element); // Ajout de _element dans le vecteur
     laMap.insert(pair<Position, unsigned> (_element->getPosition(), size()-1));
   }
 }
