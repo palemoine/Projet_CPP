@@ -38,5 +38,5 @@ void Element::setName(const string& name) {
 
 // Affichage de l'élément
 void Element::afficherElement() {
-	cout << " Element : "<< getName() << ", Position : " << getPosition() << endl;
+	cout << " - Element : "<< getName() << ", Position : " << getPosition() << endl;
 }

@@ -20,13 +20,13 @@ private:
 public:
 	Position();
 	Position(unsigned int, unsigned int);
-	int getPositionX()const;
-	int getPositionY()const;
-	void setPosition(int & _positionX, int & _positionY);
+	unsigned int getPositionX()const;
+	unsigned int getPositionY()const;
+	void setPosition(unsigned int & _positionX, unsigned int & _positionY);
 	bool operator < (const Position & p2) const;
 	void afficherPosition();
-	void setPositionX(int positionX);
-	void setPositionY(int positionY);
+	void setPositionX(unsigned int positionX);
+	void setPositionY( unsigned int positionY);
 };
 ostream & operator << (ostream & Out, const Position &pos);
 

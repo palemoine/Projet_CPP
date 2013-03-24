@@ -24,6 +24,7 @@ private:
 		unsigned int xMax;
 		unsigned int yMax;
 
+
 public:
 		Monde();
 		const map<Position, unsigned >&getMap() const;

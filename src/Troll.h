@@ -23,5 +23,5 @@ using namespace std;
 //
 //
 //};
-
+#endif /* TROLL_H_ */
 

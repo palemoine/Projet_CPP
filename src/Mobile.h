@@ -22,6 +22,7 @@ public:
 	typedef enum {NORD, NORDEST, NORDOUEST, SUD, SUDEST, SUDOUEST} Direction;
 	Mobile(Monde *_monde);
 	bool seDeplacer(Direction);
+	Position aTrouve(Position);
 	int getVitesse() const;
 	void setVitesse(int vitesse);
 	unsigned int getVision() const;

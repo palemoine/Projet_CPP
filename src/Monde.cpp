@@ -8,32 +8,36 @@
 #include <stdlib.h>
 #include "Monde.h"
 #include "Orc.h"
+#include <string>
 
 Monde::Monde() {
 	xMax = 12;
 	yMax = 12;
 	cout << "Monde créé.\n";
 
-    Position pos;
-	Orc *orc1 = new Orc(this,"Orc des plaines", pos);
-	push_back(orc1);
-	laMap.insert(pair<Position, unsigned>(pos, size() - 1));
-
-	Position pos2;
-	Orc *orc2 = new Orc(this,"Orc des montagnes", pos2);
-	push_back(orc2);
-	laMap.insert(pair<Position, unsigned>(pos2, size() - 1));
-
+	for (int i = 0 ; i < 5 ; i++)
+	{
+		Position pos;
+		Orc *orc1 = new Orc(this,"Orc des plaines", pos);
+		push_back(orc1);
+		laMap.insert(pair<Position, unsigned>(pos, size() - 1));
+	}
 	this->afficher();
+	char suivant;
+	cin>> suivant;
+	while (suivant != 'a'){
+		cin>> suivant;
+	}
+	for (int i = 0 ; i < 5 ; i++)
+	{
+		map<Position, unsigned int>::const_iterator Iter;
+		for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
 
-	orc1->seDeplacer(Mobile::SUD);
-	cout<< "___________________________________________"<<endl;
-	orc2->seDeplacer(Mobile::NORD);
+	}
+	//Nous souhaitons faire une boucle permettant de déplacer tous les fucking elements
 
-	this->afficher();
 
 }
-
 
 void Monde::afficher()const
 {
