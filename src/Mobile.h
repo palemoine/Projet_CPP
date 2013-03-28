@@ -19,7 +19,6 @@ private:
 	unsigned int vision;
 
 public:
-	typedef enum {NORD, NORDEST, NORDOUEST, SUD, SUDEST, SUDOUEST} Direction;
 	Mobile(Monde *_monde);
 	bool seDeplacer(Direction);
 	Position aTrouve(Position);

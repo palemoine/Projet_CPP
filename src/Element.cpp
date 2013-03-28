@@ -41,3 +41,7 @@ void Element::afficherElement() {
 	cout << " - Element : "<< getName() << ", Position : " << getPosition() << endl;
 }
 
+bool Element::seDeplacer(Direction _dir){
+	return true;
+}
+

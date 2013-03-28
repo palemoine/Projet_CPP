@@ -23,6 +23,7 @@ private:
 	Monde * monde;
 
 public:
+	typedef enum {NORD, NORDEST, NORDOUEST, SUD, SUDEST, SUDOUEST} Direction;
 	Element(Monde * );
 	Element(Monde *, const string&, const Position&);
 	const string& getName() const;
@@ -31,6 +32,7 @@ public:
 	void setPosition(const Position& );
 	void afficherElement();
 	 Monde* getMonde();
+	 virtual bool seDeplacer(Direction);
 };
 
 #endif /* ELEMENT_H_ */
