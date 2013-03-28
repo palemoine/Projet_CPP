@@ -26,3 +26,4 @@ Orc::Orc(Monde *_monde, const string& _name, const Position& _pos, const unsigne
 	this->setName(_name);
 	this->setPosition(_pos);
 }
+

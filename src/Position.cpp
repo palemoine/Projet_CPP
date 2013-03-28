@@ -10,17 +10,15 @@
 // Constructeur par défault
 Position::Position()
 {
-	int x = 0, y = -1, test = 0;
-	//Fonction random
-    const int min = 0 ;
-    const int max = 10 ;
+	const int min = 0, max =10;
+	int x =0, y=-1, test=0;
 
-    x = min + (rand() % (max - min));
+	x = min + (rand() % (max - min));
 
-    while(y < min || y > max)
-    {
-    	test = 1 + (rand() % (3 - 1));
-    	//cout << test;
+	while(y < min || y > max)
+	{
+		test = 1 + (rand() % (3 - 1));
+		//cout << test;
 		if(test == 1)
 		{
 			y = x + 2;
@@ -29,11 +27,11 @@ Position::Position()
 		{
 			y = x - 2;
 		}
-	    positionX = x;
-	    positionY = y;
-    }
-
+		positionY = y;
+		positionX = x;
+	}
 }
+
 
 // Constructeur paramétré
 Position::Position(unsigned int _positionX, unsigned int _positionY): positionX(_positionX), positionY(_positionY){}

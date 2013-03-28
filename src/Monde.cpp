@@ -7,34 +7,66 @@
 
 #include <stdlib.h>
 #include "Monde.h"
+#include "Arbre.h"
+#include "Bebe.h"
 #include "Orc.h"
 #include <string>
+#include <typeinfo>
 
 Monde::Monde() {
+	int nbMobile=0, nbNourriture=0, nbBois=0, nbJour=0;
+	char suivant;
 	xMax = 12;
 	yMax = 12;
 	cout << "Monde créé.\n";
 
-	for (int i = 0 ; i < 5 ; i++)
-	{
-		Position pos;
-		Orc *orc1 = new Orc(this,"Orc des plaines", pos);
-		push_back(orc1);
-		laMap.insert(pair<Position, unsigned>(pos, size() - 1));
-	}
-	this->afficher();
-	char suivant;
-	cin>> suivant;
-	while (suivant != 'a'){
-		cin>> suivant;
-	}
-	for (int i = 0 ; i < 5 ; i++)
-	{
-		map<Position, unsigned int>::const_iterator Iter;
-		for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
+	do{
+		Position pos,pos2,pos3;
 
-	}
-	//Nous souhaitons faire une boucle permettant de déplacer tous les fucking elements
+		//Crée les éléments Orc
+			Orc *orc = new Orc(this,"Orc des plaines", pos);
+			ajouter(orc);
+			laMap.insert(pair<Position, unsigned>(pos, size() - 1));
+			nbMobile++;
+
+		//Crée les éléments Arbres
+			Arbre *abr = new Arbre(this,"Arbre feuillu", pos2);
+			ajouter(abr);
+			laMap.insert(pair<Position, unsigned>(pos2, size() - 1));
+			nbBois++;
+
+		//Crée les éléments Bebes
+			Bebe *bebe = new Bebe(this,"Bebe hypertrophié", pos3);
+			ajouter(bebe);
+			laMap.insert(pair<Position, unsigned>(pos3, size() - 1));
+			nbNourriture++;
+
+
+		//Deplacements
+//			map<Position, unsigned int>::const_iterator Iter;
+//			for (Iter = getMap().begin(); Iter != getMap().end(); Iter++)
+
+			orc->seDeplacer(Mobile::SUD );
+
+
+			cout<<"Tour suivant : s   |    Fin : f" << endl;
+			cin>> suivant;
+			cout << "____________Jour " << nbJour << "____________"<< endl << "---> Nombre d'elements mobiles : " << nbMobile << endl << "---> Nombre d'arbres : " << nbBois << endl << "---> Nombre de bébés : " << nbNourriture <<endl;
+			nbJour++;
+		}while(suivant != 'f');
+
+
+
+	this->afficher();
+//	for (int i = 0 ; i < 5 ; i++)
+//	{
+//		map<Position, unsigned int>::const_iterator Iter;
+//		for (Iter = getMap().begin();Iter != getMap().end(); Iter++){
+//
+//		}
+//
+//	}
+	//Nous souhaitons faire une boucle permettant de déplacer tous les  elements
 
 
 }
@@ -88,6 +120,8 @@ void Monde::ajouter(Element * _element)
     laMap.insert(pair<Position, unsigned> (_element->getPosition(), size()-1));
   }
 }
+
+
 
 const map<Position, unsigned int>& Monde::getMap() const
 {

@@ -20,6 +20,7 @@ class Orc :public Mobile {
 		Orc(Monde *, const string& , const Position&);
 		Orc(Monde *, const string&, const Position&, const unsigned int&, const unsigned int&);
 
+
 	private:
 
 

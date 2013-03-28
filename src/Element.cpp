@@ -40,3 +40,4 @@ void Element::setName(const string& name) {
 void Element::afficherElement() {
 	cout << " - Element : "<< getName() << ", Position : " << getPosition() << endl;
 }
+

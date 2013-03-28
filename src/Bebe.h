@@ -14,6 +14,7 @@
 class Bebe : public Ressource {
 public:
 	Bebe(Monde *);
+	Bebe(Monde *, const string& , const Position& );
 private:
 	unsigned int quantiteViande;
 };
